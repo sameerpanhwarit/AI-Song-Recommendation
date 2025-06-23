@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
-
+print(f"Weather API KEY: {WEATHER_API_KEY}")
 def get_public_ip():
     try:
         response = requests.get('https://api.ipify.org?format=json')

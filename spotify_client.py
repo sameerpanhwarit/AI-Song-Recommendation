@@ -9,6 +9,9 @@ WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
 CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
 
+print(f"SPOTIFY CLIENT: {CLIENT_ID}")
+print(f"SPOTIFY CLIENT SECRET: {CLIENT_SECRET}")
+
 print(f'cred: {CLIENT_ID} , {CLIENT_SECRET}')
 def get_spotify_token():
     auth_response = requests.post(
