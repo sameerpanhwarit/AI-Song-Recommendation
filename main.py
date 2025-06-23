@@ -26,6 +26,7 @@ async def weather_songs(request: Request):
     city = get_city_from_ip(ip)
     weather = get_weather_for_city(city)
     emotion = map_weather_to_emotion(weather)
+    print(f"Emotion: {emotion}")
     songs = get_song_by_emotion(emotion)
     
     return {
