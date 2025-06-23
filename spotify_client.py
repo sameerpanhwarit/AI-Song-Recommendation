@@ -28,6 +28,7 @@ def get_song_by_emotion(emotion: str):
     search_url = f"https://api.spotify.com/v1/search?q={emotion}&type=playlist&limit=1"
     res = requests.get(search_url, headers=headers)
     data = res.json()
+    print(f"Data: {data}")
     playlist = data['playlists']['items'][0]
     
     playlist_id = playlist['id']
