@@ -40,12 +40,13 @@ def get_song_by_emotion(emotion: str):
     songs = []
     print(f"Track Data: {tracks_data}")
     for item in tracks_data['items']:
+
+        track = item['track']
         
         if not track:
             print("Skipping a track because it's None:", item)
             continue
-
-        track = item['track']
+            
         song_name = track['name']
         artists = ", ".join(artist['name'] for artist in track['artists'])
         songs.append(f"{song_name} by {artists}")
