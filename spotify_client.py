@@ -30,15 +30,14 @@ def get_song_by_emotion(emotion: str):
     data = res.json()
     print(f"Data: {data}")
     playlist = data['playlists']['items'][0]
-    
-    playlist_id = playlist['id']
 
-    if not playlist_id:
+    if not playlist:
         return {
             "status": "error",
             "message": "Try Different Image"
         }
-
+        
+    playlist_id = playlist['id']
     
     tracks_url = f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks"
     tracks_res = requests.get(tracks_url, headers=headers)
