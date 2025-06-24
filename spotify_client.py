@@ -38,6 +38,7 @@ def get_song_by_emotion(emotion: str):
     tracks_data = tracks_res.json()
 
     songs = []
+    print(f"Track Data: {tracks_data}")
     for item in tracks_data['items']:
         track = item['track']
         song_name = track['name']
