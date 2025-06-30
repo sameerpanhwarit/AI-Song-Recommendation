@@ -15,4 +15,4 @@ def predict_emotion(image_path: str) -> str:
     predictions = model.predict(img_array)
     emotion_index = np.argmax(predictions)
     emotion = emotion_labels[emotion_index]
-    return map_emotion[emotion]
+    return map_emotion[emotion.lower()]
